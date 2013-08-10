@@ -1,7 +1,20 @@
 #!/bin/bash
 
+sudo -v
+
+# Set computer name.
+sudo scutil --set ComputerName "MacBook Pro"
+sudo scutil --set LocalHostName "MacBook-Pro"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MACBOOKPRO"
+
 # Increase the key repeat rate.
 defaults write NSGlobalDomain KeyRepeat -int 5
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 20
+
+# Enable quit finder menu item.
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Do not create .DS_Store files on network volumes.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
