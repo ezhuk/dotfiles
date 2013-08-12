@@ -8,9 +8,9 @@ sudo scutil --set LocalHostName "MacBook-Pro"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MACBOOKPRO"
 
 # Increase the key repeat rate.
-defaults write NSGlobalDomain KeyRepeat -int 5
+defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Enable quit finder menu item.
 defaults write com.apple.finder QuitMenuItem -bool true
