@@ -1,6 +1,6 @@
 #Dotfiles
 
-Simple configuration files for vim, git and bash.
+Simple configuration files for OS X, vim, git and bash.
 
 ## Installation
 
