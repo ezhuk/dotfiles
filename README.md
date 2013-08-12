@@ -17,4 +17,4 @@ Restart terminal for the changes to take effect.
 
 ## License
 
-Licensed under the MIT license. See [LICENSE](LICENSE) for more details.
+Licensed under the [MIT license](LICENSE).
