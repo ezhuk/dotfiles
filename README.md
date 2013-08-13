@@ -4,7 +4,7 @@ Simple configuration files for OS X, vim, git and bash.
 
 ## Installation
 
-Clone this repository and create symlinks in your home directory.
+Use the following commands to clone this repository and create symlinks in your home directory.
 
 ```bash
 git clone https://github.com/ezhuk/dotfiles.git ~/dotfiles
