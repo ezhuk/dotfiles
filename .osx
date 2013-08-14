@@ -7,6 +7,9 @@ sudo scutil --set ComputerName "MacBook Pro"
 sudo scutil --set LocalHostName "MacBook-Pro"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MACBOOKPRO"
 
+# Check for software updates every day.
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
 # Increase the key repeat rate.
 defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
