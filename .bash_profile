@@ -6,15 +6,16 @@ export HISTCONTROL=erasedups
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
-export PS1="\s-\v\[\e[1;33m\]\$(get_git_branch)\[\e[0m\]$ "
+export PS1="\s-\v\[\e[1;33m\]\$(git_info)\[\e[0m\]$ "
 
-get_git_status()
+git_status()
 {
   [[ -n $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
 
-get_git_branch()
+git_info()
 {
-  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/·\(\1$(get_git_status)\)/"
+  BRANCH=$(git branch 2> /dev/null)
+  [[ -n $BRANCH ]] && echo "$BRANCH" | sed -e "/^[^*]/d" -e "s/* \(.*\)/·\(\1$(git_status)\)/"
 }
 
