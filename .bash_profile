@@ -1,3 +1,5 @@
+# .bash_profile
+
 export CLICOLOR=1
 
 export HISTCONTROL=erasedups
@@ -6,9 +8,13 @@ export HISTFILESIZE=1000
 
 export PS1="\s-\v\[\e[1;33m\]\$(get_git_branch)\[\e[0m\]$ "
 
-get_git_branch()
+get_git_status()
 {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/·(\1)/'
+  [[ -n $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
 
+get_git_branch()
+{
+  git branch 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/·\(\1$(get_git_status)\)/"
+}
 
