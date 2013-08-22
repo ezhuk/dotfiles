@@ -1,5 +1,4 @@
 " .vimrc
-"
 
 set nocompatible                        " use vim settings
 
