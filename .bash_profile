@@ -6,7 +6,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
-export PS1="\s-\v\[\e[1;33m\]\$(git_info)\[\e[0m\]$ "
+export PS1="\W\[\e[1;33m\]\$(git_info)\[\e[0m\]$ "
 
 git_status()
 {
