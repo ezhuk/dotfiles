@@ -46,7 +46,8 @@ if has("autocmd")
       \   exe "normal! g`\"" |
       \ endif
 
-  autocmd BufNewFile,BufRead *.go setlocal ft=go
+  au BufNewFile,BufRead *.go setlocal ft=go
+  au BufNewFile,BufRead *.md setlocal ft=markdown
 
   au FileType * setlocal fo-=r          " do not auto insert the current comment leader
   au FileType make setlocal ts=8 sts=4 sw=4 noexpandtab
