@@ -3,8 +3,17 @@
 set nocompatible                        " use vim settings
 
 set backspace=indent,eol,start          " backspace over everything
-set history=100                         " keep longer history
+set history=1000                        " keep longer history
 set mouse=a                             " enable mouse for all modes
+set ttyfast                             " fast terminal connection
+
+set nobackup                            " do not backup
+set noswapfile                          " do not use swap files
+set nowb                                " do not write backup
+
+set backupdir=~/.vim/backup             " backup files
+set directory=~/.vim/swap               " swap files go here
+set undodir=~/.vim/undos                " undo files go there
 
 set incsearch                           " enable incremental search
 set ignorecase                          " case insensitive
