@@ -13,7 +13,7 @@ set nowb                                " do not write backup
 
 set backupdir=~/.vim/backup             " backup files
 set directory=~/.vim/swap               " swap files go here
-set undodir=~/.vim/undos                " undo files go there
+set undodir=~/.vim/undo                 " undo files go there
 
 set incsearch                           " enable incremental search
 set ignorecase                          " case insensitive
