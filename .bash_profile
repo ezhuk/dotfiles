@@ -6,7 +6,15 @@ export HISTCONTROL=erasedups
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
-export PS1="\W\[\e[1;33m\]\$(git_info)\[\e[0m\]$ "
+RED="\[\e[0;31m\]"
+GREEN="\[\e[0;32m\]"
+BROWN="\[\e[0;33m\]"
+BLUE="\[\e[0;34m\]"
+PURPLE="\[\e[0;35m\]"
+CYAN="\[\e[0;36m\]"
+GRAY="\[\e[0;37m\]"
+
+export PS1="\W$BROWN\$(git_info)\[\e[0m\]$ "
 
 git_status()
 {
