@@ -6,13 +6,13 @@ export HISTCONTROL=erasedups
 export HISTSIZE=1000
 export HISTFILESIZE=1000
 
-RED="\[\e[0;31m\]"
-GREEN="\[\e[0;32m\]"
-BROWN="\[\e[0;33m\]"
-BLUE="\[\e[0;34m\]"
-PURPLE="\[\e[0;35m\]"
-CYAN="\[\e[0;36m\]"
-GRAY="\[\e[0;37m\]"
+RED="\[\033[0;31m\]"
+GREEN="\[\033[0;32m\]"
+BROWN="\[\033[0;33m\]"
+BLUE="\[\033[0;34m\]"
+PURPLE="\[\033[0;35m\]"
+CYAN="\[\033[0;36m\]"
+GRAY="\[\033[0;37m\]"
 
 export PS1="\W$BROWN\$(git_info)\[\e[0m\]$ "
 
