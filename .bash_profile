@@ -13,8 +13,9 @@ BLUE="\[\033[0;34m\]"
 PURPLE="\[\033[0;35m\]"
 CYAN="\[\033[0;36m\]"
 GRAY="\[\033[0;37m\]"
+NO="\[\033[0m\]"
 
-export PS1="\W$BROWN\$(git_info)\[\e[0m\]$ "
+export PS1="\h:\W$BROWN\$(git_info)$NO$ "
 
 git_status()
 {
