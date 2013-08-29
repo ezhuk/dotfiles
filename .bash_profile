@@ -13,18 +13,29 @@ BLUE="\[\033[0;34m\]"
 PURPLE="\[\033[0;35m\]"
 CYAN="\[\033[0;36m\]"
 GRAY="\[\033[0;37m\]"
-NO="\[\033[0m\]"
-
-export PS1="\h:\W$BROWN\$(git_info)$NO$ "
-
-git_status()
-{
-  [[ -n $(git status --porcelain 2> /dev/null) ]] && echo "*"
-}
+NO="\[\033[00m\]"
 
 git_info()
 {
   BRANCH=$(git branch 2> /dev/null)
-  [[ -n $BRANCH ]] && echo "$BRANCH" | sed -e "/^[^*]/d" -e "s/* \(.*\)/·\(\1$(git_status)\)/"
+  if [ -n "$BRANCH" ];
+  then
+    BRANCH=$(echo "$BRANCH" | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/");
+
+    STATUS=$(git status --porcelain 2> /dev/null);
+    if [ -n "$STATUS" ];
+    then
+      echo -n "$BROWN"'·('"$BRANCH"'*)'"$NO";
+    else
+      echo -n "$GREEN"'·('"$BRANCH"')'"$NO";
+    fi
+  fi
 }
+
+prompt()
+{
+  PS1="\h:\W$(git_info)\$ "
+}
+
+PROMPT_COMMAND=prompt
 
