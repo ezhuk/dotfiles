@@ -21,10 +21,12 @@ git_info()
   if [[ "$STATUS" =~ On\ branch\ ([^[:space:]]+) ]]; then
     local BRANCH=${BASH_REMATCH[1]}
 
-    if [[ "$STATUS" =~ Your\ branch\ is\ ahead\ of ]]; then
-      local COLOR=$BROWN
-    elif [[ "$STATUS" =~ nothing\ to\ commit ]]; then
-      local COLOR=$GREEN
+    if [[ "$STATUS" =~ nothing\ to\ commit ]]; then
+      if [[ "$STATUS" =~ Your\ branch\ is\ ahead\ of ]]; then
+        local COLOR=$BROWN
+      else
+        local COLOR=$GREEN
+      fi
     else
       local COLOR=$RED
     fi
