@@ -17,18 +17,19 @@ NO="\[\033[00m\]"
 
 git_info()
 {
-  BRANCH=$(git branch 2> /dev/null)
-  if [ -n "$BRANCH" ];
+  local STATUS=$(git status 2>&1)
+  if [[ "$STATUS" =~ On\ branch\ ([^[:space:]]+) ]]
   then
-    BRANCH=$(echo "$BRANCH" | sed -e "/^[^*]/d" -e "s/* \(.*\)/\1/");
+    local BRANCH=${BASH_REMATCH[1]}
 
-    STATUS=$(git status --porcelain 2> /dev/null);
-    if [ -n "$STATUS" ];
+    if [[ "$STATUS" =~ nothing\ to\ commit ]]
     then
-      echo -n "$BROWN"'·('"$BRANCH"'*)'"$NO";
+      local COLOR=$GREEN
     else
-      echo -n "$GREEN"'·('"$BRANCH"')'"$NO";
+      local COLOR=$BROWN
     fi
+
+    echo -n "$COLOR"'·('"$BRANCH"')'"$NO";
   fi
 }
 
