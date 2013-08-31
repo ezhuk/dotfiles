@@ -2,6 +2,7 @@
 
 set nocompatible                        " use vim settings
 
+set encoding=utf-8                      " set the character encoding to utf-8
 set backspace=indent,eol,start          " backspace over everything
 set history=1000                        " keep longer history
 set mouse=a                             " enable mouse for all modes
