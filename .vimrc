@@ -27,15 +27,10 @@ set showcmd                             " show incomplete commands
 set nostartofline                       " do not reset the cursor to the start of line
 
 set smarttab                            " smarter tabs
-set softtabstop=4                       " use two spaces by default
-set shiftwidth=4                        " use two spaces by default
-set tabstop=8                           " use two spaces by default
+set softtabstop=4                       " use four spaces by default
+set shiftwidth=4                        " use four spaces by default
+set tabstop=8                           " use eight spaces by default
 set expandtab                           " replace <tab> with spaces
-
-if &t_Co > 2 || has("gui_running")
-  syntax on                             " enable syntax highlighting
-  set hlsearch                          " highlight searches
-endif
 
 set list listchars=trail:.,tab:>.       " highlight trailing whitespaces
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
@@ -59,5 +54,4 @@ else
   set autoindent                        " enable autoindent
   set smartindent                       " enable smart autoindenting
 endif
-
 
