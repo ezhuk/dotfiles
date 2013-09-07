@@ -1,6 +1,6 @@
 #Dotfiles
 
-Simple configuration files for bash, git, vim and OS X.
+Simple, yet powerful, configuration files for bash, git, vim and OS X.
 
 ## Installation
 
@@ -19,7 +19,13 @@ Reload bash configuration for the changes to take effect either by restarting th
 source ~/.bash_profile
 ```
 
-Alternatively, [GNU Stow](http://www.gnu.org/software/stow/) can be used to manage symlinks to the configuration files. Simply build and install it from source code if it is not available by default.
+Alternatively, [GNU Stow](http://www.gnu.org/software/stow/) can be used to manage symlinks to the configuration files. You may need to build and install it from source code if it is not available by default.
+
+To change Mac OS X defaults, simply run the following in your terminal:
+
+```bash
+sudo ./.osx
+```
 
 ## License
 
