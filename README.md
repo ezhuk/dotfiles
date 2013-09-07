@@ -19,6 +19,8 @@ Reload bash configuration for the changes to take effect either by restarting th
 source ~/.bash_profile
 ```
 
+Alternatively, [GNU Stow](http://www.gnu.org/software/stow/) can be used to manage symlinks to the configuration files.
+
 ## License
 
 Licensed under the [MIT license](LICENSE).
