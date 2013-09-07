@@ -19,7 +19,7 @@ Reload bash configuration for the changes to take effect either by restarting th
 source ~/.bash_profile
 ```
 
-Alternatively, [GNU Stow](http://www.gnu.org/software/stow/) can be used to manage symlinks to the configuration files.
+Alternatively, [GNU Stow](http://www.gnu.org/software/stow/) can be used to manage symlinks to the configuration files. Simply build and install it from source code if it is not available by default.
 
 ## License
 
