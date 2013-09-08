@@ -32,6 +32,8 @@ set shiftwidth=4                        " use four spaces by default
 set tabstop=8                           " use eight spaces by default
 set expandtab                           " replace <tab> with spaces
 
+syntax on                               " enable syntax highlighting
+
 set list listchars=trail:.,tab:>.       " highlight trailing whitespaces
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
