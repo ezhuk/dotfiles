@@ -42,3 +42,7 @@ prompt()
 
 PROMPT_COMMAND=prompt
 
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
