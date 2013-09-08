@@ -1,5 +1,9 @@
 # .bash_profile
 
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi
+
 export CLICOLOR=1
 
 export HISTCONTROL=erasedups
@@ -41,8 +45,4 @@ prompt()
 }
 
 PROMPT_COMMAND=prompt
-
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
 
