@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PWD=$(which pwd)
+LN=$(which ln)
+
+for NAME in .*; do
+  FILE=$HOME/$NAME
+  case $NAME in
+    .|..|.git|.gitignore|.osx) continue
+      ;;
+    *) if [ -e "$FILE" ]; then
+         echo "'$FILE' already exists"
+       else
+         echo "Symlinking '$NAME' into '$FILE'"
+         $LN -s "$(PWD)/$NAME" $FILE
+       fi
+      ;;
+  esac
+done
+
