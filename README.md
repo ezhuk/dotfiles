@@ -7,11 +7,9 @@ Simple, yet powerful, configuration files for bash, git, vim and OS X.
 Use the following commands to clone this repository and create symlinks in your home directory:
 
 ```bash
-git clone https://github.com/ezhuk/dotfiles.git ~/dotfiles
-ln -s ~/dotfiles/.bash_aliases ~/.bash_aliases
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+git clone https://github.com/ezhuk/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./install
 ```
 
 Reload bash configuration for the changes to take effect either by restarting the terminal or running this command:
