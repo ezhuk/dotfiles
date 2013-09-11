@@ -8,11 +8,24 @@ for NAME in .*; do
   case $NAME in
     .|..|.git|.gitignore|.osx) continue
       ;;
-    *) if [ -e "$FILE" ]; then
-         echo "'$FILE' already exists"
-       else
+    *) LINK="Y"
+
+       if [ -e "$FILE" ]; then
+         while true; do
+           read -p "'$FILE' already exists. Do you want to replace it anyway? [y/N]: " REPLY
+           if [ -z "$REPLY" ]; then
+             REPLY="N"
+           fi
+           case "$REPLY" in
+             Y|y) LINK="Y"; break ;;
+             N|n) LINK="N"; break ;;
+           esac
+         done
+       fi
+
+       if [ "$LINK" = "Y" ]; then
          echo "Symlinking '$NAME' into '$FILE'"
-         $LN -s "$(PWD)/$NAME" $FILE
+         $LN -sfF "$(PWD)/$NAME" $FILE
        fi
       ;;
   esac
