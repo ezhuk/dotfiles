@@ -1,5 +1,9 @@
 # .bash_aliases
 
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
