@@ -32,6 +32,9 @@ set shiftwidth=4                        " use four spaces by default
 set tabstop=8                           " use eight spaces by default
 set expandtab                           " replace <tab> with spaces
 
+set binary                              " binary mode
+set noeol                               " do not add EOL to the last line
+
 syntax on                               " enable syntax highlighting
 
 set list listchars=trail:.,tab:>.       " highlight trailing whitespaces
@@ -56,4 +59,3 @@ else
   set autoindent                        " enable autoindent
   set smartindent                       " enable smart autoindenting
 endif
-
