@@ -1,5 +1,7 @@
 # .bash_profile
 
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
