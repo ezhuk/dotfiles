@@ -15,11 +15,14 @@ defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Show all filename extensions.
+defaults write NSGlobalDomain AppleShowAllExtensions -int 1
+
 # Minimize windows into application icon.
 defaults write com.apple.dock minimize-to-application -int 1
 
 # Show scrollbar in terminal only when scrolling.
-defaults write com.apple.Terminal AppleShowScrollBars -string WhenScrolling
+defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
 
 # Enable quit finder menu item.
 defaults write com.apple.finder QuitMenuItem -bool true
