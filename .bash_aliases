@@ -4,6 +4,9 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 
+alias df='df -h'
+alias du='du -sh'
+
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
