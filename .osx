@@ -15,6 +15,9 @@ defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Show battery level percentage.
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 # Show all filename extensions.
 defaults write NSGlobalDomain AppleShowAllExtensions -int 1
 
