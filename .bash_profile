@@ -47,4 +47,3 @@ prompt()
 }
 
 PROMPT_COMMAND=prompt
-

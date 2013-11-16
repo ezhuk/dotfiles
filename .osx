@@ -40,4 +40,3 @@ defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Do not enable rich text format by default.
 defaults write com.apple.TextEdit RichText -int 0
-

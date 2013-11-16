@@ -59,4 +59,3 @@ else
   set autoindent                        " enable autoindent
   set smartindent                       " enable smart autoindenting
 endif
-

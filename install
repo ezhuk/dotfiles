@@ -30,4 +30,3 @@ for NAME in .*; do
       ;;
   esac
 done
-
