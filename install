@@ -25,7 +25,7 @@ for NAME in .*; do
 
        if [ "$LINK" = "Y" ]; then
          echo "Symlinking '$NAME' into '$FILE'"
-         $LN -sfF "$(PWD)/$NAME" $FILE
+         $LN -sfFn "$(PWD)/$NAME" $FILE
        fi
       ;;
   esac
