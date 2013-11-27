@@ -18,14 +18,11 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Show battery level percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
-# Show all filename extensions.
-defaults write NSGlobalDomain AppleShowAllExtensions -int 1
-
 # Minimize windows into application icon.
 defaults write com.apple.dock minimize-to-application -int 1
 
-# Show scrollbar in terminal only when scrolling.
-defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
+# Show all filename extensions.
+defaults write NSGlobalDomain AppleShowAllExtensions -int 1
 
 # Enable quit finder menu item.
 defaults write com.apple.finder QuitMenuItem -int 1
@@ -35,8 +32,11 @@ defaults write com.apple.finder EmptyTrashSecurely -int 1
 # Do not create .DS_Store files on network volumes.
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
-# Do not automatically open safe files in Safari after downloading.
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# Show scrollbar in terminal only when scrolling.
+defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
 
 # Do not enable rich text format by default.
 defaults write com.apple.TextEdit RichText -int 0
+
+# Do not automatically open safe files in Safari after downloading.
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
