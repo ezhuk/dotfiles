@@ -1,4 +1,10 @@
-[push]
-	default = simple
+[alias]
+	branches = branch -a
+	tags = tag -l
+	remotes = remote -v
+[core]
+	trustctime = false
 [credential]
 	helper = osxkeychain
+[push]
+	default = simple
