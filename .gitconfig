@@ -3,6 +3,7 @@
 	tags = tag -l
 	remotes = remote -v
 [core]
+	editor = vim
 	trustctime = false
 [credential]
 	helper = osxkeychain
