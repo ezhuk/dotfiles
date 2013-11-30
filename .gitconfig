@@ -1,7 +1,18 @@
 [alias]
+	br = branch
+	ci = commit
+	co = checkout
+	df = diff
+	lg = log
+	st = status
+
 	branches = branch -a
 	tags = tag -l
 	remotes = remote -v
+
+	amend = commit --amend
+[color]
+	ui = auto
 [core]
 	editor = vim
 	trustctime = false
