@@ -4,6 +4,7 @@
 	co = checkout
 	df = diff
 	lg = log
+	ls = ls-files
 	st = status
 
 	branches = branch -a
