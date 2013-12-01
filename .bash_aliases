@@ -22,4 +22,4 @@ alias fgrep='fgrep --color=auto'
 
 alias curl='curl --compressed'
 
-alias reload='source ~/.bash_profile'
+alias reload='source ~/.bash_profile && echo "reloaded ~/.bash_profile"'
