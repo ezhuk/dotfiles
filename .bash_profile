@@ -4,7 +4,8 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export RBENV_ROOT=/usr/local/var/rbenv
+export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
 
 export CLICOLOR=1
 
