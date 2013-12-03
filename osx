@@ -23,6 +23,14 @@ defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Hide Bluetooth and Time Machine icons.
+defaults write com.apple.systemuiserver menuExtras -array \
+    "/System/Library/CoreServices/Menu Extras/Displays.menu" \
+    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+    "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
 # Show battery level percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
@@ -34,6 +42,8 @@ defaults write NSGlobalDomain AppleShowAllExtensions -int 1
 
 # Enable quit finder menu item.
 defaults write com.apple.finder QuitMenuItem -int 1
+# Enable list view by default.
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Empty Trash securely by default.
 defaults write com.apple.finder EmptyTrashSecurely -int 1
 
@@ -47,4 +57,6 @@ defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
 defaults write com.apple.TextEdit RichText -int 0
 
 # Do not automatically open safe files in Safari after downloading.
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+defaults write com.apple.Safari AutoOpenSafeDownloads -int 0
+# Do not show Sidebar in Top Sites.
+defaults write com.apple.Safari ShowSidebarInTopSites -int 0
