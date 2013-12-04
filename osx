@@ -23,6 +23,11 @@ defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Turn Bluetooth off.
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
+
 # Hide Bluetooth and Time Machine icons.
 defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Displays.menu" \
