@@ -23,10 +23,23 @@ defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Enable Firewall (specific services, stealth mode, logging).
+sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
+sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -int 1
+# Reload Firewall.
+launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+sudo launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist
+launchctl load /System/Library/LaunchAgents/com.apple.alf.useragent.plist
+
 # Turn Bluetooth off.
 sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
 sudo launchctl unload /System/Library/LaunchDaemons/com.apple.blued.plist
 sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
+
+# Disable IR remote control.
+sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
 
 # Hide Bluetooth and Time Machine icons.
 defaults write com.apple.systemuiserver menuExtras -array \
