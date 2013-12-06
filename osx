@@ -78,3 +78,7 @@ defaults write com.apple.TextEdit RichText -int 0
 defaults write com.apple.Safari AutoOpenSafeDownloads -int 0
 # Do not show Sidebar in Top Sites.
 defaults write com.apple.Safari ShowSidebarInTopSites -int 0
+# Enable Develop menu.
+defaults write com.apple.Safari IncludeDevelopMenu -int 1
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -int 1
