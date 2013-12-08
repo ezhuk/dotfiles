@@ -23,3 +23,4 @@ alias fgrep='fgrep --color=auto'
 alias curl='curl --compressed'
 
 alias reload='source ~/.bash_profile && echo "reloaded ~/.bash_profile"'
+alias update='brew update; brew upgrade; brew cleanup; gem update --system; gem update'
