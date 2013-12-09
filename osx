@@ -22,6 +22,8 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 
 defaults write NSGlobalDomain KeyRepeat -int 3
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Enable full keyboard access.
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
 # Enable Firewall (specific services, stealth mode, logging).
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
