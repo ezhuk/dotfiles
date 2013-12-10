@@ -3,14 +3,12 @@
 	ci = commit
 	co = checkout
 	df = diff
-	lg = log
+	lg = log --graph --decorate --pretty=\"%C(auto) %h %ai %d %s\"
 	ls = ls-files
 	st = status
-
 	branches = branch -a
 	tags = tag -l
 	remotes = remote -v
-
 	amend = commit --amend
 [color]
 	ui = auto
