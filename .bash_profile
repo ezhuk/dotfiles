@@ -4,6 +4,10 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
+if [ -f `brew --prefix git`/etc/bash_completion.d/git-completion.bash  ]; then
+    source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+fi
+
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
 
