@@ -6,7 +6,7 @@ LN=$(which ln)
 for NAME in .*; do
   FILE=$HOME/$NAME
   case $NAME in
-    .|..|.git|.gitignore|.osx) continue
+    .|..|.git|.gitignore|osx) continue
       ;;
     *) LINK="Y"
 
