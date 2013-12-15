@@ -25,6 +25,10 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 15
 # Enable full keyboard access.
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
+# Adjust keyboard brightness in low light.
+sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -int 1
+sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Keyboard Dim Time" -int 300
+
 # Enable Firewall (specific services, stealth mode, logging).
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
