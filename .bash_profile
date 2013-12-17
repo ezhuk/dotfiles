@@ -4,8 +4,9 @@ if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases
 fi
 
-if [ -f `brew --prefix git`/etc/bash_completion.d/git-completion.bash  ]; then
-    source `brew --prefix git`/etc/bash_completion.d/git-completion.bash
+GIT_COMPLETION=$(brew --prefix git)/etc/bash_completion.d/git-completion.bash
+if [ -f "$GIT_COMPLETION"  ]; then
+    source "$GIT_COMPLETION"
 fi
 
 export RBENV_ROOT=/usr/local/var/rbenv
