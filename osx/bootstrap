@@ -1,6 +1,11 @@
 #!/bin/bash
 
+# Extend the sudo timeout and prompt for the user's password if necessary as
+# some of the commands below require root permissions.
 sudo -v
+
+
+### General
 
 # Set computer name.
 sudo scutil --set ComputerName "MacBook Pro"
@@ -13,6 +18,29 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # Require password immediately after sleep or screen saver begins.
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+# Show battery level percentage.
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
+# Hide Bluetooth and Time Machine icons.
+defaults write com.apple.systemuiserver menuExtras -array \
+    "/System/Library/CoreServices/Menu Extras/Displays.menu" \
+    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
+    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+    "/System/Library/CoreServices/Menu Extras/Clock.menu"
+
+# Minimize windows into application icon.
+defaults write com.apple.dock minimize-to-application -int 1
+
+# Show all filename extensions.
+defaults write NSGlobalDomain AppleShowAllExtensions -int 1
+
+# Do not create .DS_Store files on network volumes.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+
+### Keyboard and Trackpad
 
 # Enable tap to click.
 defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
@@ -28,6 +56,27 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 # Adjust keyboard brightness in low light.
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Keyboard Enabled" -int 1
 sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Keyboard Dim Time" -int 300
+
+
+### Finder
+
+# Enable quit finder menu item.
+defaults write com.apple.finder QuitMenuItem -int 1
+
+# Enable list view by default.
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Empty Trash securely by default.
+defaults write com.apple.finder EmptyTrashSecurely -int 1
+
+
+### Terminal
+
+# Show scrollbar in terminal only when scrolling.
+defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
+
+
+### Security
 
 # Enable Firewall (specific services, stealth mode, logging).
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
@@ -47,49 +96,28 @@ sudo launchctl load /System/Library/LaunchDaemons/com.apple.blued.plist
 # Disable IR remote control.
 sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
 
-# Hide Bluetooth and Time Machine icons.
-defaults write com.apple.systemuiserver menuExtras -array \
-    "/System/Library/CoreServices/Menu Extras/Displays.menu" \
-    "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-    "/System/Library/CoreServices/Menu Extras/Clock.menu"
 
-# Show battery level percentage.
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
-# Minimize windows into application icon.
-defaults write com.apple.dock minimize-to-application -int 1
-
-# Show all filename extensions.
-defaults write NSGlobalDomain AppleShowAllExtensions -int 1
-
-# Enable quit finder menu item.
-defaults write com.apple.finder QuitMenuItem -int 1
-# Enable list view by default.
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-# Empty Trash securely by default.
-defaults write com.apple.finder EmptyTrashSecurely -int 1
-
-# Do not create .DS_Store files on network volumes.
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Show scrollbar in terminal only when scrolling.
-defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
+### TextEdit
 
 # Do not enable rich text format by default.
 defaults write com.apple.TextEdit RichText -int 0
 
+
+### Safari
+
 # Do not automatically open safe files in Safari after downloading.
 defaults write com.apple.Safari AutoOpenSafeDownloads -int 0
+
 # Disable AutoFill.
 defaults write com.apple.Safari AllowBypassOfAutocompleteOff -int 0
 defaults write com.apple.Safari AutoFillFromAddressBook -int 0
 defaults write com.apple.Safari AutoFillPasswords -int 0
 defaults write com.apple.Safari AutoFillCreditCardData -int 0
 defaults write com.apple.Safari AutoFillMiscellaneousForms -int 0
+
 # Do not show Sidebar in Top Sites.
 defaults write com.apple.Safari ShowSidebarInTopSites -int 0
+
 # Enable Develop menu.
 defaults write com.apple.Safari IncludeDevelopMenu -int 1
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -int 1
