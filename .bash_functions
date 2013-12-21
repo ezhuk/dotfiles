@@ -8,5 +8,5 @@ function tgz() {
 	return 1
     fi
 
-    tar cvfz "$1" "$2"
+    tar cvfz "$1" "$2" || return 1
 }
