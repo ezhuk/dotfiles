@@ -1,4 +1,6 @@
-# .bash_functions
+# Copyright (c) 2013 Eugene Zhuk.
+# Use of this source code is governed by the MIT license that can be found
+# in the LICENSE file.
 
 # Create a gzipped archive.
 function tgz()
@@ -12,6 +14,7 @@ function tgz()
     tar cvfz "$1" "$2" || return 1
 }
 
+# Update installed software.
 function update()
 {
     local USAGE="Usage: update"

@@ -1,4 +1,6 @@
-# .bash_profile
+# Copyright (c) 2013 Eugene Zhuk.
+# Use of this source code is governed by the MIT license that can be found
+# in the LICENSE file.
 
 if [ -f ~/.bash_aliases ]; then
     source ~/.bash_aliases

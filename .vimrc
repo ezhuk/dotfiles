@@ -1,4 +1,6 @@
-" .vimrc
+" Copyright (c) 2013 Eugene Zhuk.
+" Use of this source code is governed by the MIT license that can be found
+" in the LICENSE file.
 
 set nocompatible                        " use vim settings
 
