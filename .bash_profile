@@ -33,27 +33,26 @@ NO="\[\033[00m\]"
 
 git_info()
 {
-  local STATUS=$(git status 2>&1)
-  if [[ "$STATUS" =~ On\ branch\ ([^[:space:]]+) ]]; then
-    local BRANCH=${BASH_REMATCH[1]}
+    local STATUS=$(git status 2>&1)
+    if [[ "$STATUS" =~ On\ branch\ ([^[:space:]]+) ]]; then
+	local BRANCH=${BASH_REMATCH[1]}
+	if [[ "$STATUS" =~ nothing\ to\ commit ]]; then
+	    if [[ "$STATUS" =~ Your\ branch\ is\ ahead\ of ]]; then
+		local COLOR=$BROWN
+	    else
+		local COLOR=$GREEN
+	    fi
+	else
+	    local COLOR=$RED
+	fi
 
-    if [[ "$STATUS" =~ nothing\ to\ commit ]]; then
-      if [[ "$STATUS" =~ Your\ branch\ is\ ahead\ of ]]; then
-        local COLOR=$BROWN
-      else
-        local COLOR=$GREEN
-      fi
-    else
-      local COLOR=$RED
+	echo -n "$COLOR"'·('"$BRANCH"')'"$NO"
     fi
-
-    echo -n "$COLOR"'·('"$BRANCH"')'"$NO"
-  fi
 }
 
 prompt()
 {
-  PS1="\h:\W$(git_info)\$ "
+    PS1="\h:\W$(git_info)\$ "
 }
 
 PROMPT_COMMAND=prompt
