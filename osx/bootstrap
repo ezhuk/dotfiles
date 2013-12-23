@@ -26,6 +26,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 # Show battery level percentage.
 defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 
+# Disable wake for network access.
+sudo pmset -a womp 0
+
 # Hide Bluetooth and Time Machine icons.
 defaults write com.apple.systemuiserver menuExtras -array \
     "/System/Library/CoreServices/Menu Extras/Displays.menu" \
