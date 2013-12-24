@@ -15,6 +15,11 @@ if [ -f "$GIT_COMPLETION"  ]; then
     source "$GIT_COMPLETION"
 fi
 
+HG_COMPLETION=$(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash
+if [ -f "$HG_COMPLETION"  ]; then
+    source "$HG_COMPLETION"
+fi
+
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
 
