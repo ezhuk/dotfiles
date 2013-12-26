@@ -7,30 +7,33 @@
 PWD=$(which pwd)
 LN=$(which ln)
 
+confirm()
+{
+    while true; do
+	read -p "$1" REPLY
+	case "$REPLY" in
+	    Y|y) return 0 ;;
+	    N|n|"") return 1 ;;
+	esac
+    done
+}
+
 for NAME in .*; do
-  FILE=$HOME/$NAME
-  case $NAME in
-    .|..|.git|.gitignore|osx) continue
-      ;;
-    *) LINK="Y"
+    FILE=$HOME/$NAME
+    case $NAME in
+	.|..|.git|.gitignore|osx) continue
+	    ;;
+	*) LINK="Y"
+	    if [ -e "$FILE" ]; then
+		if ! confirm "'$FILE' already exists. Do you want to replace it anyway? [y/N]: "; then
+		    LINK="N"
+		fi
+	    fi
 
-       if [ -e "$FILE" ]; then
-         while true; do
-           read -p "'$FILE' already exists. Do you want to replace it anyway? [y/N]: " REPLY
-           if [ -z "$REPLY" ]; then
-             REPLY="N"
-           fi
-           case "$REPLY" in
-             Y|y) LINK="Y"; break ;;
-             N|n) LINK="N"; break ;;
-           esac
-         done
-       fi
-
-       if [ "$LINK" = "Y" ]; then
-         echo "Symlinking '$NAME' into '$FILE'"
-         $LN -sfFn "$(PWD)/$NAME" $FILE
-       fi
-      ;;
-  esac
+	    if [ "$LINK" = "Y" ]; then
+		echo "Symlinking '$NAME' into '$FILE'"
+		$LN -sfFn "$(PWD)/$NAME" $FILE
+	    fi
+	    ;;
+    esac
 done
