@@ -2,23 +2,16 @@
 # Use of this source code is governed by the MIT license that can be found
 # in the LICENSE file.
 
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
-fi
+FILES=(~/.bash_aliases
+       ~/.bash_functions
+       $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
+       $(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash)
 
-if [ -f ~/.bash_functions ]; then
-    source ~/.bash_functions
-fi
-
-GIT_COMPLETION=$(brew --prefix git)/etc/bash_completion.d/git-completion.bash
-if [ -f "$GIT_COMPLETION"  ]; then
-    source "$GIT_COMPLETION"
-fi
-
-HG_COMPLETION=$(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash
-if [ -f "$HG_COMPLETION"  ]; then
-    source "$HG_COMPLETION"
-fi
+for FILE in "${FILES[@]}"; do
+    if [[ -f "$FILE" ]]; then
+	source "$FILE"
+    fi
+done
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
