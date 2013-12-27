@@ -44,7 +44,7 @@ defaults write com.apple.dock minimize-to-application -int 1
 defaults write NSGlobalDomain AppleShowAllExtensions -int 1
 
 # Do not create .DS_Store files on network volumes.
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -int 1
 
 
 ### Keyboard and Trackpad
@@ -55,8 +55,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 
 
 # Increase the key repeat rate.
 defaults write NSGlobalDomain KeyRepeat -int 3
+
 # Decrease the delay until repeat.
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
 # Enable full keyboard access.
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 2
 
@@ -89,6 +91,7 @@ defaults write com.apple.Terminal AppleShowScrollBars -string "WhenScrolling"
 sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 sudo defaults write /Library/Preferences/com.apple.alf stealthenabled -int 1
 sudo defaults write /Library/Preferences/com.apple.alf loggingenabled -int 1
+
 # Reload Firewall.
 launchctl unload /System/Library/LaunchAgents/com.apple.alf.useragent.plist
 sudo launchctl unload /System/Library/LaunchDaemons/com.apple.alf.agent.plist

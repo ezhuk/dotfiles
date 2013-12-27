@@ -4,7 +4,9 @@
 # Use of this source code is governed by the MIT license that can be found
 # in the LICENSE file.
 
+FIND=$(which find)
 PWD=$(which pwd)
+BASENAME=$(which basename)
 LN=$(which ln)
 
 confirm()
@@ -18,22 +20,13 @@ confirm()
     done
 }
 
-for NAME in .*; do
-    FILE=$HOME/$NAME
-    case $NAME in
-	.|..|.git|.gitignore|osx) continue
-	    ;;
-	*) LINK="Y"
-	    if [ -e "$FILE" ]; then
-		if ! confirm "'$FILE' already exists. Do you want to replace it anyway? [y/N]: "; then
-		    LINK="N"
-		fi
-	    fi
+for SRC in $($FIND "$($PWD)" -name ".*" -depth 2 -maxdepth 2); do
+    DST=$HOME/$($BASENAME "$SRC")
+    if [[ -e "$DST" ]]; then
+	if ! confirm "'$DST' already exists. Do you want to replace it anyway? [y/N]: "; then
+	    continue
+	fi
+    fi
 
-	    if [ "$LINK" = "Y" ]; then
-		echo "Symlinking '$NAME' into '$FILE'"
-		$LN -sfFn "$(PWD)/$NAME" $FILE
-	    fi
-	    ;;
-    esac
+    $LN -sfFn "$SRC" "$DST"
 done
