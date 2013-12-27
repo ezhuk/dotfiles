@@ -1,12 +1,13 @@
 # Dotfiles
 
-Simple, yet powerful, configuration files for bash, git and vim.
+Simple, yet powerful, configuration files for bash, git and vim, among
+others.
 
 ## Installation
 
-Use the following commands in your terminal to clone this repository and
-run the [installation script](install). It will create symlinks in your
-home directory and won't replace already existing files unless told
+Clone this repository somewhere (e.g., ~/.dotfiles) and then run the
+[installation script](install). It will create appropriate symlinks in
+your home directory and won't replace already existing files unless told
 otherwise.
 
 ```bash
