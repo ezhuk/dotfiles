@@ -12,20 +12,20 @@ LN=$(which ln)
 confirm()
 {
     while true; do
-	read -p "$1" REPLY
-	case "$REPLY" in
-	    Y|y) return 0 ;;
-	    N|n|"") return 1 ;;
-	esac
+        read -p "$1" REPLY
+        case "$REPLY" in
+            Y|y) return 0 ;;
+            N|n|"") return 1 ;;
+        esac
     done
 }
 
 for SRC in $($FIND "$($PWD)" -name ".*" -depth 2 -maxdepth 2); do
     DST=$HOME/$($BASENAME "$SRC")
     if [[ -e "$DST" ]]; then
-	if ! confirm "'$DST' already exists. Do you want to replace it anyway? [y/N]: "; then
-	    continue
-	fi
+        if ! confirm "'$DST' already exists. Do you want to replace it anyway? [y/N]: "; then
+            continue
+        fi
     fi
 
     $LN -sfFn "$SRC" "$DST"
