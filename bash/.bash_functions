@@ -5,9 +5,8 @@
 # Create a gzipped archive.
 function tgz()
 {
-    local USAGE="Usage: tgz <name> <path>"
     if [[ "$#" -ne 2 ]]; then
-        echo "$USAGE"
+        echo "Usage: tgz <name> <path>"
         return 1
     fi
 
@@ -17,9 +16,8 @@ function tgz()
 # Update installed software.
 function update()
 {
-    local USAGE="Usage: update"
     if [[ "$#" -ne 0 ]]; then
-        echo "$USAGE"
+        echo "Usage: update"
         return 1
     fi
 
