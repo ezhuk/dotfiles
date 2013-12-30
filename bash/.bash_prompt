@@ -11,6 +11,7 @@ CYAN="\[\033[0;36m\]"
 GRAY="\[\033[0;37m\]"
 NO="\[\033[00m\]"
 
+# Color code the current git branch, if any, based on its status.
 git_info()
 {
     local STATUS=$(git status 2>&1)

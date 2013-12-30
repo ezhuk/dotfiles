@@ -14,6 +14,12 @@ for FILE in "${FILES[@]}"; do
     fi
 done
 
+# Save all lines of a multiple-line command in the same history entry.
+shopt -s cmdhist
+
+# Append to the history file when the shell exits, rather than overwriting it.
+shopt -s histappend
+
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
 
