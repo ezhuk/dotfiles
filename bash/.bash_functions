@@ -25,6 +25,7 @@ function update()
     brew update
     brew upgrade
     brew cleanup
+    brew prune
 
     echo "[2/2] Updating gems..."
     gem update --system

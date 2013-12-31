@@ -4,6 +4,7 @@
 
 FILES=(~/.bash_aliases
        ~/.bash_functions
+       ~/.bash_options
        ~/.bash_prompt
        $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
        $(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash)
@@ -13,12 +14,6 @@ for FILE in "${FILES[@]}"; do
         source "$FILE"
     fi
 done
-
-# Save all lines of a multiple-line command in the same history entry.
-shopt -s cmdhist
-
-# Append to the history file when the shell exits, rather than overwriting it.
-shopt -s histappend
 
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"

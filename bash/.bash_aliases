@@ -17,7 +17,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 
-# Enable colorized output, long format and dirs whose names begin with a dot.
+# Enable colors, long format and show dirs whose names begin with a dot.
 alias ls='ls -lGa'
 
 # Automatically mark up the matching text.

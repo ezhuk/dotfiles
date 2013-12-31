@@ -1,0 +1,9 @@
+# Copyright (c) 2013 Eugene Zhuk.
+# Use of this source code is governed by the MIT license that can be found
+# in the LICENSE file.
+
+# Save all lines of a multiple-line command in the same history entry.
+shopt -s cmdhist
+
+# Append to the history file when the shell exits, rather than overwriting it.
+shopt -s histappend
