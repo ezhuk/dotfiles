@@ -9,9 +9,9 @@ FILES=(~/.bash_aliases
        $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
        $(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash)
 
-for FILE in "${FILES[@]}"; do
-    if [[ -f "$FILE" ]]; then
-        source "$FILE"
+for file in "${FILES[@]}"; do
+    if [[ -f "$file" ]]; then
+        source "$file"
     fi
 done
 
