@@ -15,11 +15,13 @@ for file in "${FILES[@]}"; do
     fi
 done
 
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$RBENV_ROOT/shims:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$RBENV_ROOT/shims:$PATH"
 
 export CLICOLOR=1
 
 export HISTCONTROL=erasedups
-export HISTSIZE=1000
-export HISTFILESIZE=1000
+export HISTSIZE=2048
+export HISTFILESIZE=2048
