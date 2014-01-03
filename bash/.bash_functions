@@ -32,3 +32,13 @@ function update()
     gem update
     gem cleanup
 }
+
+# Use git diff if available.
+function diff()
+{
+    if hash git &>/dev/null; then
+        git diff --no-index --color-words "$@"
+    else
+        diff "$@"
+    fi
+}
