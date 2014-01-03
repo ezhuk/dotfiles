@@ -22,6 +22,6 @@ export PATH="$RBENV_ROOT/shims:$PATH"
 
 export CLICOLOR=1
 
-export HISTCONTROL=erasedups
-export HISTSIZE=2048
-export HISTFILESIZE=2048
+export HISTCONTROL=ignoreboth:erasedups
+export HISTSIZE=8192
+export HISTFILESIZE=8192
