@@ -4,11 +4,6 @@
 # Use of this source code is governed by the MIT license that can be found
 # in the LICENSE file.
 
-FIND=$(which find)
-PWD=$(which pwd)
-BASENAME=$(which basename)
-LN=$(which ln)
-
 # Check if an action can be performed.
 confirm()
 {
@@ -22,13 +17,13 @@ confirm()
 }
 
 # Symlink configuration files into home directory.
-for src in $($FIND "$($PWD)" -name ".*" -depth 2 -maxdepth 2); do
-    dst=$HOME/$($BASENAME "$src")
+for src in $(find "$(pwd)" -name ".*" -depth 2 -maxdepth 2); do
+    dst=$HOME/$(basename "$src")
     if [[ -e "$dst" ]]; then
         if ! confirm "'$dst' already exists. Do you want to replace it anyway? [y/N]: "; then
             continue
         fi
     fi
 
-    $LN -sfFn "$src" "$dst"
+    ln -sfFn "$src" "$dst"
 done
