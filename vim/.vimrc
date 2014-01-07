@@ -39,6 +39,9 @@ set noeol                               " do not add EOL to the last line
 
 syntax on                               " enable syntax highlighting
 
+set completeopt=longest,menuone         " use longest common text and always show the menu
+set pumheight=10                        " limit the completion popup menu
+
 set list listchars=trail:.,tab:>.       " highlight trailing whitespaces
 highlight SpecialKey ctermfg=DarkGray ctermbg=Black
 
