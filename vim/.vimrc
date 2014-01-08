@@ -9,6 +9,8 @@ set backspace=indent,eol,start          " backspace over everything
 set history=1000                        " keep longer history
 set mouse=a                             " enable mouse for all modes
 set ttyfast                             " fast terminal connection
+set modelines=0                         " disable modelines
+set nowildmenu                          " disable wild menu completion
 
 set nobackup                            " do not backup
 set noswapfile                          " do not use swap files
