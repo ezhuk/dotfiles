@@ -61,7 +61,7 @@ if has("autocmd")
   au FileType * setlocal fo-=r          " do not auto insert the current comment leader
   au FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   au FileType cpp setlocal ts=8 sts=4 sw=4 expandtab
-  au FileType python setlocal ts=8 sts=4 sw=4
+  au FileType python setlocal ts=8 sts=4 sw=4 expandtab
   au FileType go setlocal ts=8 sts=4 sw=4 noexpandtab
 else
   set autoindent                        " enable autoindent
