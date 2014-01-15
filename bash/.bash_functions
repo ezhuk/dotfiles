@@ -42,3 +42,30 @@ function diff()
         diff "$@"
     fi
 }
+
+# Enable/disable ReportCrash.
+function reportcrash()
+{
+    local usage="Usage: reportcrash (--enable|--disable)"
+    if [[ "$#" -ne 1 ]]; then
+        echo "$usage"
+        return 1
+    fi
+
+    case "$1" in
+        -e|--enable)
+            launchctl load -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+            sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+            echo "Enabled ReportCrash"
+            ;;
+        -d|--disable)
+            launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+            sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.ReportCrash.Root.plist
+            echo "Disabled ReportCrash"
+            ;;
+        *)
+            echo "$usage"
+            return 1
+            ;;
+    esac
+}

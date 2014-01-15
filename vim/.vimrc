@@ -58,7 +58,7 @@ if has("autocmd")
   au BufNewFile,BufRead *.md setlocal ft=markdown
   au BufNewFile,BufRead [Mm]akefile* setlocal ft=make
 
-  au FileType * setlocal fo-=r          " do not auto insert the current comment leader
+  au FileType * setlocal fo-=r expandtab
   au FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   au FileType cpp setlocal ts=8 sts=4 sw=4 expandtab
   au FileType python setlocal ts=8 sts=4 sw=4 expandtab
