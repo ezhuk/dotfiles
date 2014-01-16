@@ -33,3 +33,7 @@ alias reload='source ~/.bash_profile && echo "reloaded ~/.bash_profile"'
 
 # Generate UNIX timestamp.
 alias timestamp='date -j "+%s"'
+
+# Enable/disable ReportCrash.
+alias rce='reportcrash --enable'
+alias rcd='reportcrash --disable'
