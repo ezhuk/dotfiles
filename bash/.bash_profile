@@ -20,6 +20,8 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$RBENV_ROOT/shims:$PATH"
 
+export PATH="$PATH:/usr/local/depot_tools"
+
 export CLICOLOR=1
 
 export HISTCONTROL=ignoreboth:erasedups
