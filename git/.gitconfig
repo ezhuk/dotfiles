@@ -13,6 +13,7 @@
 	branches = branch -a
 	tags = tag -l
 	remotes = remote -v
+	stashes = stash list
 	amend = commit --amend
 [color]
 	ui = auto
