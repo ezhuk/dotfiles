@@ -21,16 +21,19 @@ function update()
         return 1
     fi
 
-    echo "[1/2] Updating homebrew..."
+    echo "[1/3] Updating homebrew..."
     brew update
     brew upgrade
     brew cleanup
     brew prune
 
-    echo "[2/2] Updating gems..."
+    echo "[2/3] Updating gems..."
     gem update --system
     gem update
     gem cleanup
+
+    echo "[3/3] Updating python..."
+    pip install --upgrade $(pip freeze | awk -F'==' '{print $1}')
 }
 
 # Use git diff if available.
