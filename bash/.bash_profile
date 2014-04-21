@@ -5,11 +5,7 @@
 FILES=(~/.bash_aliases
        ~/.bash_functions
        ~/.bash_options
-       ~/.bash_prompt
-       $(brew --prefix)/etc/bash_completion
-       $(brew --prefix git)/etc/bash_completion.d/git-completion.bash
-       $(brew --prefix hg)/etc/bash_completion.d/hg-completion.bash
-       $(brew --prefix go)/etc/bash_completion.d/go-completion.bash)
+       ~/.bash_prompt)
 
 for file in "${FILES[@]}"; do
     if [[ -f "$file" ]]; then
@@ -18,11 +14,6 @@ for file in "${FILES[@]}"; do
 done
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$RBENV_ROOT/shims:$PATH"
-
-export PATH="$PATH:/usr/local/depot_tools"
 
 export CLICOLOR=1
 
